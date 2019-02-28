@@ -1,0 +1,32 @@
+{
+    "name": "dbt/laravel-odbc-driver",
+    "description": "ODBC Driver for Laravel 5.*",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tck",
+            "email": "ben@thecreativekind.co.uk"
+        },
+        {
+            "name": "Daniel S. Deboer",
+            "email": "daniel.s.deboer@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "illuminate/support": "5.4.*|5.5.*|5.6.*|5.7.*",
+        "illuminate/database": "5.4.*|5.5.*|5.6.*|5.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dbt\\LaravelOdbcDriver\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dbt\\LaravelOdbcDriver\\Provider"
+            ]
+        }
+    }
+}
