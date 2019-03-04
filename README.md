@@ -1,11 +1,11 @@
-# Laravel ODBC Connector
+# ODBC Driver for Laravel
 
-This is a simple ODBC connector for Laravel 4/5.
+A simple ODBC driver for Laravel 5.5+.
 
 ### Installation
 
 ```
-composer require dbt/laravel-odbc-driver
+composer require dbt/odbc-driver
 ```
 
 Laravel will automatically discover the service provider.
