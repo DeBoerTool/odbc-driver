@@ -1,6 +1,6 @@
 <?php
 
-namespace Dbt\LaravelOdbcDriver;
+namespace Dbt\Odbc;
 
 use Illuminate\Database\Connection;
 use Illuminate\Support\ServiceProvider;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dbt\LaravelOdbcDriver;
+namespace Dbt\Odbc;
 
 use Illuminate\Database\Connectors\Connector as IlluminateConnector;
 use Illuminate\Database\Connectors\ConnectorInterface;

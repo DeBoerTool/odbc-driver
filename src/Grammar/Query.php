@@ -1,6 +1,6 @@
 <?php
 
-namespace Dbt\LaravelOdbcDriver\Grammar;
+namespace Dbt\Odbc\Grammar;
 
 use Illuminate\Database\Query\Grammars\Grammar;
 

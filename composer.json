@@ -9,24 +9,49 @@
         },
         {
             "name": "Daniel S. Deboer",
-            "email": "daniel.s.deboer@gmail.com"
+            "email": "daniel.s.deboer@gmail.com",
+            "role": "Developer"
         }
+    ],
+    "keywords": [
+        "laravel",
+        "database",
+        "odbc",
+        "driver"
     ],
     "require": {
         "php": ">=7.1.3",
+        "ext-pdo": "*",
         "illuminate/support": "5.4.*|5.5.*|5.6.*|5.7.*",
         "illuminate/database": "5.4.*|5.5.*|5.6.*|5.7.*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "vimeo/psalm": "^3.1"
+    },
     "autoload": {
         "psr-4": {
-            "Dbt\\LaravelOdbcDriver\\": "src/"
+            "Dbt\\Odbc\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dbt\\Odbc\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Dbt\\LaravelOdbcDriver\\Provider"
+                "Dbt\\Odbc\\Provider"
             ]
         }
+    },
+    "scripts": {
+        "test": "phpunit --no-coverage",
+        "test-coverage": "phpunit --coverage-html coverage",
+        "stat": "psalm"
+    },
+    "config": {
+        "sort-packages": true
     }
 }
