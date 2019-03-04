@@ -17,7 +17,7 @@ In your `database.php` config, you'll need to add the ODBC connection configurat
 ```
 'odbc'   => [
 	'driver'   => 'odbc',
-	'dsn'      => 'odbc:DB_CONNECTION_STRING', //
+	'dsn'      => 'odbc:DB_CONNECTION_STRING',
 	'host'     => 'DB_HOST',
 	'database' => 'DB_NAME,
 	'username' => 'DB_USERNAME',

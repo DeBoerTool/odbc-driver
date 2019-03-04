@@ -1,6 +1,6 @@
 {
-    "name": "dbt/laravel-odbc-driver",
-    "description": "ODBC Driver for Laravel 5.*",
+    "name": "dbt/odbc-driver",
+    "description": "ODBC Driver for Laravel 5.5+",
     "license": "MIT",
     "authors": [
         {
