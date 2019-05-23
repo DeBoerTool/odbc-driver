@@ -7,7 +7,6 @@ use Dbt\Odbc\Grammar\Query;
 use Dbt\Odbc\Grammar\Schema;
 use Illuminate\Database\Connection as IlluminateConnection;
 use Illuminate\Database\Grammar;
-use Illuminate\Support\Facades\Config;
 
 class Connection extends IlluminateConnection
 {
