@@ -15,13 +15,13 @@ Laravel will automatically discover the service provider.
 In your `database.php` config, you'll need to add the ODBC connection configuration, eg:
 
 ```
-'odbc'   => [
-	'driver'   => 'odbc',
-	'dsn'      => 'odbc:DB_CONNECTION_STRING',
-	'host'     => 'DB_HOST',
-	'database' => 'DB_NAME,
-	'username' => 'DB_USERNAME',
-	'password' => 'DB_PASSWORD',
+'odbc' => [
+    'driver'   => 'odbc',
+    'dsn'      => 'odbc:DB_CONNECTION_STRING',
+    'host'     => 'DB_HOST',
+    'database' => 'DB_NAME,
+    'username' => 'DB_USERNAME',
+    'password' => 'DB_PASSWORD',
 ],
 ```
 
