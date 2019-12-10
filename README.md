@@ -2,6 +2,10 @@
 
 A simple ODBC driver for Laravel 5.5+.
 
+### Prerequisites
+
+Enable the `pdo_odbc` [PHP extension](https://www.php.net/manual/en/ref.pdo-odbc.php)
+
 ### Installation
 
 ```
@@ -17,11 +21,11 @@ In your `database.php` config, you'll need to add the ODBC connection configurat
 ```
 'odbc' => [
     'driver'   => 'odbc',
-    'dsn'      => 'odbc:DB_CONNECTION_STRING',
-    'host'     => 'DB_HOST',
-    'database' => 'DB_NAME,
-    'username' => 'DB_USERNAME',
-    'password' => 'DB_PASSWORD',
+    'dsn'      => env('ODBC_DSN'),
+    'host'     => env('ODBC_HOST'),
+    'database' => env('ODBC_DB'),
+    'username' => env('ODBC_USERNAME'),
+    'password' => env('ODBC_PASSWORD'),
 ],
 ```
 
