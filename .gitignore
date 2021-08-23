@@ -1,5 +1,6 @@
 /vendor
 composer.lock
+phpunit.xml
 
 ## Directory-based project format:
 .idea/
