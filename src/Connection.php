@@ -31,7 +31,7 @@ class Connection extends IlluminateConnection
     protected function getDefaultSchemaGrammar ()
     {
         return $this->withTablePrefix(
-            $this->keyOrDefault('sh', Schema::class)
+            $this->keyOrDefault('schema', Schema::class)
         );
     }
 
