@@ -1,6 +1,8 @@
 /vendor
 composer.lock
 phpunit.xml
+.phpunit.result.cache
+build
 
 ## Directory-based project format:
 .idea/
