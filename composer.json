@@ -26,9 +26,9 @@
         "illuminate/database": "^8.0|^9.0|^10.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "vimeo/psalm": "^4.23",
-        "orchestra/testbench": "^7.0"
+        "laravel/pint": "^1.10",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Dbt\\Odbc\\Tests\\": "tests"
+            "Dbt\\Odbc\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -49,8 +49,11 @@
     },
     "scripts": {
         "test": "phpunit --no-coverage",
-        "test-coverage": "phpunit --coverage-html coverage",
-        "stat": "psalm"
+        "coverage": "phpunit --coverage-html coverage",
+        "pint": "pint",
+        "pint-dry": "pint --test",
+        "stat": "psalm",
+        "ci": "phpunit --configuration=phpunit.ci.xml"
     },
     "config": {
         "sort-packages": true
