@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Grammars\Grammar;
 use Illuminate\Support\Fluent;
 
-class Schema extends Grammar
+class SchemaGrammar extends Grammar
 {
     /**
      * The keyword identifier wrapper format.

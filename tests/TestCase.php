@@ -2,7 +2,7 @@
 
 namespace Dbt\Odbc\Tests;
 
-use Dbt\Odbc\Provider;
+use Dbt\Odbc\OdbcServiceProvider;
 use Illuminate\Config\Repository;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -30,6 +30,6 @@ class TestCase extends Orchestra
 
     protected function getPackageProviders($app): array
     {
-        return [Provider::class];
+        return [OdbcServiceProvider::class];
     }
 }

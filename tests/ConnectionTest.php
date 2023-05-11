@@ -14,4 +14,16 @@ class ConnectionTest extends TestCase
 
         $this->assertNotNull($result);
     }
+
+    /** @test */
+    public function using_a_different_connection_name(): void
+    {
+        $config = config()->get('database.connections.odbc');
+
+        config()->set('database.connections.odbc2', $config);
+
+        $this->assertNotNull(
+            DB::connection('odbc2')->select(config('database.test_select')),
+        );
+    }
 }

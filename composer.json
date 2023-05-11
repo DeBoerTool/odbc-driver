@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Dbt\\Odbc\\Provider"
+                "OdbcDriverServiceProvider"
             ]
         }
     },
