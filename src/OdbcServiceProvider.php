@@ -16,6 +16,7 @@ class OdbcServiceProvider extends ServiceProvider
              * @param string $prefix
              * @param array $config
              * @return \Dbt\Odbc\OdbcConnection
+             * @throws \Exception
              */
             function ($connection, $database, $prefix, $config) {
                 if (!isset($config['prefix'])) {
