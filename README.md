@@ -4,7 +4,10 @@ A simple ODBC driver for Laravel 6.0+. Requires PHP 8.
 
 ### Prerequisites
 
-Enable the `pdo_odbc` [PHP extension](https://www.php.net/manual/en/ref.pdo-odbc.php)
+Enable the `pdo_odbc` [PHP extension](https://www.php.net/manual/en/ref.pdo-odbc.php).
+
+
+For other database engines (for instance [MS SQL Server](https://learn.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server)), you'll need to install the appropriate PHP extension(s).
 
 ### Installation
 
@@ -16,10 +19,10 @@ Laravel will automatically discover the service provider.
 
 ### Configuration
 
-In your `database.php` config, you'll need to add the ODBC connection configuration, eg:
+In your `database.php` config, configure your connection using the `odbc` driver:
 
-```
-'odbc' => [
+```php
+'my-odbc-connection' => [
     'driver'   => 'odbc',
     'dsn'      => env('ODBC_DSN'),
     'host'     => env('ODBC_HOST'),
@@ -31,10 +34,10 @@ In your `database.php` config, you'll need to add the ODBC connection configurat
 
 ### Custom Grammar
 
-To use SQL Server or other database engines, set the grammar in the config:
+To use SQL Server or other database engines, you can set the grammars in your `database.php` config block for that connection:
 
-```
-'odbc'   => [
+```php
+'my-odbc-connection' => [
     ...,
     'grammar' => [
         'query' => Illuminate\Database\Query\Grammars\SqlServerGrammar::class,
@@ -76,6 +79,14 @@ Or something as simple as:
 
 ```php
 'dsn' => 'odbc:dbname',
+```
+
+For SQL server, you'll need to specify the DSN, the user, and the password. For example:
+
+```php
+'dsn' => 'sqlsrv:Driver=ODBC Driver 18 for SQL Server;Server=tcp:localhost,1433;TrustServerCertificate=1;Encrypt=1;'
+'username' => 'sa',
+'password' => 'my-super-secret-password',
 ```
 
 ### Contributions & License

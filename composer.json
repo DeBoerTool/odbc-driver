@@ -20,15 +20,15 @@
         "driver"
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "ext-pdo": "*",
         "illuminate/support": "^8.0|^9.0|^10.0",
         "illuminate/database": "^8.0|^9.0|^10.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "vimeo/psalm": "^4.23",
-        "orchestra/testbench": "^7.0"
+        "laravel/pint": "^1.5",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
@@ -37,20 +37,22 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Dbt\\Odbc\\Tests\\": "tests"
+            "Dbt\\Odbc\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Dbt\\Odbc\\Provider"
+                "Dbt\\Odbc\\OdbcDriverServiceProvider"
             ]
         }
     },
     "scripts": {
         "test": "phpunit --no-coverage",
-        "test-coverage": "phpunit --coverage-html coverage",
-        "stat": "psalm"
+        "coverage": "phpunit --coverage-html coverage",
+        "pint": "pint",
+        "pint-dry": "pint --test",
+        "ci": "phpunit --configuration=phpunit.ci.xml"
     },
     "config": {
         "sort-packages": true

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php" backupGlobals="false" backupStaticAttributes="false" colors="true" verbose="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <include>
+      <directory suffix=".php">src/</directory>
+    </include>
+    <report>
+      <html outputDirectory="build/coverage"/>
+      <text outputFile="build/coverage.txt"/>
+    </report>
+  </coverage>
+
+  <testsuites>
+    <testsuite name="Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+
+  <php>
+    <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+
+    <env name="ODBC_DSN" value="sqlsrv:Driver=ODBC Driver 18 for SQL Server;Server=tcp:localhost,1433;TrustServerCertificate=1;Encrypt=1;"/>
+    <env name="ODBC_HOST" value=""/>
+    <env name="ODBC_DB" value=""/>
+    <env name="ODBC_USERNAME" value="sa"/>
+    <env name="ODBC_PASSWORD" value="Testing1234%"/>
+    <env name="ODBC_TEST_SELECT" value="SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'"/>
+  </php>
+</phpunit>

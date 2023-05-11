@@ -1,0 +1,61 @@
+name: PHP Tests & QC
+on:
+  pull_request:
+    branches:
+      - trunk
+  push:
+    branches:
+      - trunk
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '8.1', '8.2' ]
+        laravel: [ 10.*, 9.*, 8.* ]
+        dependency-version: [ prefer-stable ]
+        include:
+          - laravel: 10.*
+            testbench: ^8.0
+          - laravel: 9.*
+            testbench: ^7.0
+          - laravel: 8.*
+            testbench: ^6.0
+
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: pcov, sqlsrv, pdo_sqlsrv
+
+      - name: Install Dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+
+      - name: Install ODBC Driver
+        uses: Yarden-zamir/install-mssql-odbc@main
+        with:
+          ODBC_VERSION: 18
+          DISTRO: Ubuntu
+
+      - name: Install SQL Server + Tools
+        uses: potatoqualitee/mssqlsuite@v1.7
+        with:
+          install: sqlengine, sqlclient
+          sa-password: Testing1234%
+          version: 2019
+          show-log: true
+
+      - name: Run Tests
+        run: composer ci
+
+      - name: Run Pint
+        run: composer pint-dry
