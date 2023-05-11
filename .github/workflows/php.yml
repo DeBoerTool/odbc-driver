@@ -49,7 +49,7 @@ jobs:
           show-log: true
 
       - name: Run Tests
-        run: composer test
+        run: composer ci
 
       - name: Run Pint
         run: composer pint-dry
