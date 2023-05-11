@@ -26,7 +26,7 @@
         "illuminate/database": "^8.0|^9.0|^10.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.10",
+        "laravel/pint": "^1.5",
         "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.5"
     },
