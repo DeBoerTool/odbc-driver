@@ -14,10 +14,11 @@ class Connection extends IlluminateConnection
     private $keyFormat = 'database.connections.odbc.grammar.%s';
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
+     *
      * @psalm-suppress MoreSpecificReturnType
      */
-    protected function getDefaultQueryGrammar ()
+    protected function getDefaultQueryGrammar()
     {
         return $this->withTablePrefix(
             $this->keyOrDefault('query', Query::class)
@@ -25,17 +26,18 @@ class Connection extends IlluminateConnection
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
+     *
      * @psalm-suppress MoreSpecificReturnType
      */
-    protected function getDefaultSchemaGrammar ()
+    protected function getDefaultSchemaGrammar()
     {
         return $this->withTablePrefix(
             $this->keyOrDefault('schema', Schema::class)
         );
     }
 
-    private function keyOrDefault (string $key, string $fqcn): Grammar
+    private function keyOrDefault(string $key, string $fqcn): Grammar
     {
         $class = Config::get(sprintf($this->keyFormat, $key))
             ?: $fqcn;

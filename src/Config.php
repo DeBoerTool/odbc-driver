@@ -6,10 +6,10 @@ class Config
 {
     /**
      * Get a value from the config if it's resolvable.
-     * @param string $key
+     *
      * @return string|null
      */
-    public static function get (string $key)
+    public static function get(string $key)
     {
         $value = null;
 

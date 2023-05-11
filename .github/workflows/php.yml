@@ -40,12 +40,13 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
+      - name: Install ODBC Driver
       - uses: Yarden-zamir/install-mssql-odbc@main
         with:
           ODBC_VERSION: 18
           DISTRO: Ubuntu
 
-      - name: Install a SQL Server suite of tools
+      - name: Install SQL Server + Tools
         uses: potatoqualitee/mssqlsuite@v1.7
         with:
           install: sqlengine, sqlclient

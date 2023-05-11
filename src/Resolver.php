@@ -6,7 +6,7 @@ use Closure;
 
 final class Resolver
 {
-    public static function callback (): Closure
+    public static function callback(): Closure
     {
         /**
          * @param \PDO|\Closure $connection
@@ -14,11 +14,11 @@ final class Resolver
          * @param string $prefix
          * @param array $config
          * @return \Dbt\Odbc\Connection
+         *
          * @psalm-suppress MissingClosureParamType
          * @psalm-suppress  MissingClosureReturnType
          */
-        return function ($connection, $database, $prefix, $config)
-        {
+        return function ($connection, $database, $prefix, $config) {
             if (!isset($config['prefix'])) {
                 $config['prefix'] = '';
             }
