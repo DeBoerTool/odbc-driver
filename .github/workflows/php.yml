@@ -41,7 +41,7 @@ jobs:
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
       - name: Install ODBC Driver
-      - uses: Yarden-zamir/install-mssql-odbc@main
+        uses: Yarden-zamir/install-mssql-odbc@main
         with:
           ODBC_VERSION: 18
           DISTRO: Ubuntu
