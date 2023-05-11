@@ -52,7 +52,6 @@
         "coverage": "phpunit --coverage-html coverage",
         "pint": "pint",
         "pint-dry": "pint --test",
-        "stat": "psalm",
         "ci": "phpunit --configuration=phpunit.ci.xml"
     },
     "config": {
