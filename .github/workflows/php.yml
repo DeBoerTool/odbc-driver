@@ -33,7 +33,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: pcov
+          extensions: pcov, sqlsrv pdo_sqlsrv
 
       - name: Install Dependencies
         run: |
