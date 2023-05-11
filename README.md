@@ -37,7 +37,7 @@ In your `database.php` config, configure your connection using the `odbc` driver
 To use SQL Server or other database engines, you can set the grammars in your `database.php` config block for that connection:
 
 ```php
-'odbc'   => [
+'my-odbc-connection' => [
     ...,
     'grammar' => [
         'query' => Illuminate\Database\Query\Grammars\SqlServerGrammar::class,
