@@ -1,6 +1,6 @@
 # ODBC Driver for Laravel
 
-A simple ODBC driver for Laravel 6.0+. Requires PHP 8.
+A simple ODBC driver for Laravel.
 
 ### Prerequisites
 
