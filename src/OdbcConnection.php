@@ -13,14 +13,14 @@ class OdbcConnection extends IlluminateConnection
 	protected function getDefaultQueryGrammar(): IlluminateQueryGrammar
 	{
 		return isset($this->config['grammar']['query'])
-			? new $this->config['grammar']['query']()
-			: new QueryGrammar();
+			? new $this->config['grammar']['query']($this)
+			: new QueryGrammar($this);
 	}
 
 	protected function getDefaultSchemaGrammar(): IlluminateSchemaGrammar
 	{
 		return isset($this->config['grammar']['schema'])
-			? new $this->config['grammar']['schema']()
-			: new SchemaGrammar();
+			? new $this->config['grammar']['schema']($this)
+			: new SchemaGrammar($this);
 	}
 }
