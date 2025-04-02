@@ -25,9 +25,11 @@ class SchemaGrammar extends Grammar
 	/**
 	 * Compile the query to determine if a table exists.
 	 *
+	 * @param $schema
+	 * @param $table
 	 * @return string
 	 */
-	public function compileTableExists()
+	public function compileTableExists($schema, $table)
 	{
 		return 'select * from information_schema.tables where table_schema = ? and table_name = ?';
 	}
