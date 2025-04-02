@@ -6,3 +6,5 @@ build
 
 ## Directory-based project format:
 .idea/
+.php-cs-fixer.cache
+
