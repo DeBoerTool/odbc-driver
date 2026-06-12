@@ -11,7 +11,7 @@ For other database engines (for instance [MS SQL Server](https://learn.microsoft
 
 ### Installation
 
-For Laravel <=11, use version 4.0. For Laravel 12, use version 5.0.
+For Laravel <=11, use version 4.0. For Laravel 12 and 13, use version 5.0.
 
 ```
 composer require dbt/odbc-driver
